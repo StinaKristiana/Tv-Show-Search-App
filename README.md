@@ -18,7 +18,7 @@ After what project should automatically open on : http://localhost:3000/
 ## Designe
 
 ![Image](https://i.imgur.com/aocUjwZ.png)
-![Image](https://i.imgur.com/PJ5OcTo.png)
+![Image](https://i.imgur.com/Z6SmbVf.png)
 ![Image](https://i.imgur.com/ElRjJvF.png)
 
 
