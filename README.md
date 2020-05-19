@@ -3,7 +3,7 @@
 Simple TV Show app where you can search for shows
 
 ## Installation
-
+Design
 Use the package manager npm to install Tv Show App.
 
 In project directory run following commands:
@@ -16,9 +16,9 @@ In project directory run following commands:
 After what project should automatically open on : http://localhost:3000/
 
 ## Designe
-![Image of Design](./assets/img/intro.png)
-![Image of Design](./assets/img/episodes.png)
-![Image of Design](./assets/img/about.png)
+![Image](./assets/img/intro.png)
+![Image](./assets/img/episodes.png)
+![Image](./assets/img/about.png)
 
 # Technical Notes
 - Responsive design using Material UI Guidelines 🎨
