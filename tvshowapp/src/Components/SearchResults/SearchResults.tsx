@@ -84,7 +84,6 @@ export default function SearchResults(): ReactElement {
             </Grid>
           ))}
         </Grid>
-        <Footer />
       </Container>
     </div>
   ) : (
