@@ -1,0 +1,80 @@
+import React, { ReactElement, useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { Show } from "../component";
+import {
+  CircularProgress,
+  Container,
+  Grid,
+  Card,
+  CardMedia,
+  CardContent,
+  Typography,
+  CardActions,
+  Button,
+} from "@material-ui/core";
+import { useStyles } from "../ShowCards/style";
+import _ from "lodash";
+import Footer from "../ShowCards/Footer/Footer";
+
+interface Props {
+  search: boolean;
+  searchingFor: string;
+}
+
+export default function SearchResults(): ReactElement {
+  const { name } = useParams();
+  const [shows, setShows] = useState<Show[]>();
+  const classes = useStyles();
+
+  useEffect(() => {
+    fetch(`https://api.tvmaze.com/search/shows?q=${name}`)
+      .then((res) => res.json())
+      .then((data) =>
+        setShows(data.map((res: { score: number; show: Show }) => res.show))
+      )
+      .catch((err) => console.log(err));
+  },);
+  console.log(shows);
+  
+  return shows !== undefined ? (
+    <div>
+      <h2 style={{ margin: "5vh" }}> 
+        Searching for: <span style={{ color: "#415AB5", margin: "5vh auto" }}>{name}</span>
+      </h2>
+
+      <Container maxWidth="md">
+        <Grid container spacing={4}>
+          {shows.map((res) => (
+            <Grid item key={_.uniqueId("id_")} xs={12} sm={6} md={4}>
+              <Card className={classes.card}>
+                <CardMedia
+                  className={classes.cardMedia}
+                  image={res.image !== null ? res.image.original : "https://bitsofco.de/content/images/2018/12/Screenshot-2018-12-16-at-21.06.29.png"}
+                  title="Image title"
+                />
+                <CardContent className={classes.cardContent}>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    {res.name}
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button size="small" color="primary">
+                    Read More
+                  </Button>
+                  <Button size="small" color="primary">
+                    Episodes
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      <Footer/>
+      </Container>
+    </div>
+  ) : (
+    <div className={classes.cardsroot}>
+      <CircularProgress color="secondary" />
+    </div>
+  );
+}
