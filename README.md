@@ -16,9 +16,11 @@ In project directory run following commands:
 After what project should automatically open on : http://localhost:3000/
 
 ## Designe
-![Image](./assets/img/intro.png)
-![Image](./assets/img/episodes.png)
-![Image](./assets/img/about.png)
+
+![Image](https://i.imgur.com/aocUjwZ.png)
+![Image](https://i.imgur.com/PJ5OcTo.png)
+![Image](https://i.imgur.com/ElRjJvF.png)
+
 
 # Technical Notes
 - Responsive design using Material UI Guidelines 🎨
