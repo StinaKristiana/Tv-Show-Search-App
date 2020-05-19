@@ -7,7 +7,6 @@ import TreeItem from "@material-ui/lab/TreeItem";
 import { useStyles } from "./style";
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
-
 import _ from "lodash";
 import {
   Card,
@@ -22,7 +21,6 @@ export default function Episodes(): ReactElement {
   const classes = useStyles();
   const { id } = useParams();
   const [episodes, setEpisodes] = useState<Episode[]>([]);
-
 
   useEffect(() => {
     fetch(`https://api.tvmaze.com/shows/${id}/episodes`)
@@ -54,7 +52,11 @@ export default function Episodes(): ReactElement {
       defaultExpandIcon={<ChevronRightIcon />}
     >
       {getSeasons().map((res: any, index: number) => (
-        <TreeItem nodeId="1" label={`Season: ${index + 1}`} key={_.uniqueId("id_")} >
+        <TreeItem
+          nodeId={`${index}`}
+          label={`Season: ${index + 1}`}
+          key={_.uniqueId("id_")}
+        >
           <Card className={classes.broot}>
             <Grid container spacing={4}>
               {res.map((it: Episode) => (

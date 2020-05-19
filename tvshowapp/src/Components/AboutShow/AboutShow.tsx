@@ -1,13 +1,15 @@
 import React, { ReactElement, useState, useEffect } from "react";
-import Card from "@material-ui/core/Card";
-import CardHeader from "@material-ui/core/CardHeader";
-import CardMedia from "@material-ui/core/CardMedia";
-import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useStyles } from "./style";
 import { Show } from "../component";
-import { CircularProgress, Tooltip } from "@material-ui/core";
+import {
+  CircularProgress,
+  Tooltip,
+  Grid,
+  Paper,
+  Button,
+} from "@material-ui/core";
 import ReactMarkdown from "react-markdown";
 import Rating from "@material-ui/lab/Rating";
 
@@ -24,10 +26,20 @@ export default function AboutShow(): ReactElement {
       .catch((err) => console.log(err));
   }, [id]);
   return show !== undefined ? (
-    <Card className={classes.root} style={{ margin: "5vh auto" }}>
-      <CardHeader
-        title={show.name}
-        subheader={
+    <Grid container component="main" className={classes.root}>
+      <Grid
+        item
+        xs={false}
+        sm={4}
+        md={7}
+        className={classes.image}
+        style={{ backgroundImage: `url(${show.image.original})` }}
+      />
+      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+        <div className={classes.paper}>
+          <Typography variant="h3" color="textSecondary">
+            {show.name}
+          </Typography>
           <Tooltip
             placement="right"
             title={`IMDB rating: ${show.rating.average}`}
@@ -41,19 +53,18 @@ export default function AboutShow(): ReactElement {
               />
             </div>
           </Tooltip>
-        }
-      />
-      <CardMedia
-        className={classes.media}
-        image={show.image.original}
-        title="Paella dish"
-      />
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          <ReactMarkdown source={show.summary} escapeHtml={false} />
-        </Typography>
-      </CardContent>
-    </Card>
+          <Typography variant="body2" color="textSecondary" component="p">
+            <ReactMarkdown source={show.summary} escapeHtml={false} />
+          </Typography>
+          <Link
+            to={`/show/${show.id}/episodes`}
+            style={{ textDecoration: "none", marginRight: "auto" }}
+          >
+            <Button variant="outlined">Episodes</Button>
+          </Link>
+        </div>
+      </Grid>
+    </Grid>
   ) : (
     <CircularProgress color="secondary" />
   );

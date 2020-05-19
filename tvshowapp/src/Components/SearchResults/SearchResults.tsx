@@ -33,13 +33,14 @@ export default function SearchResults(): ReactElement {
         setShows(data.map((res: { score: number; show: Show }) => res.show))
       )
       .catch((err) => console.log(err));
-  },[]);
+  }, []);
   console.log(shows);
-  
+
   return shows !== undefined ? (
     <div>
-      <h2 style={{ margin: "5vh" }}> 
-        Searching for: <span style={{ color: "#415AB5", margin: "5vh auto" }}>{name}</span>
+      <h2 style={{ margin: "5vh" }}>
+        Searching for:{" "}
+        <span style={{ color: "#ec407a", margin: "5vh auto" }}>{name}</span>
       </h2>
 
       <Container maxWidth="md">
@@ -49,7 +50,11 @@ export default function SearchResults(): ReactElement {
               <Card className={classes.card}>
                 <CardMedia
                   className={classes.cardMedia}
-                  image={res.image !== null ? res.image.original : "https://bitsofco.de/content/images/2018/12/Screenshot-2018-12-16-at-21.06.29.png"}
+                  image={
+                    res.image !== null
+                      ? res.image.original
+                      : "https://bitsofco.de/content/images/2018/12/Screenshot-2018-12-16-at-21.06.29.png"
+                  }
                   title="Image title"
                 />
                 <CardContent className={classes.cardContent}>
@@ -58,22 +63,28 @@ export default function SearchResults(): ReactElement {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                <Link to={`/show/${res.id}`} style={{textDecoration: 'none'}} >
-                  <Button size="small" color="primary">
-                    Read More
-                  </Button>
+                  <Link
+                    to={`/show/${res.id}`}
+                    style={{ textDecoration: "none" }}
+                  >
+                    <Button size="small" color="primary">
+                      Read More
+                    </Button>
                   </Link>
-                  <Link to={`/show/${res.id}/episodes`} style={{textDecoration: 'none'}} >
-                  <Button size="small" color="primary">
-                    Episodes
-                  </Button>
+                  <Link
+                    to={`/show/${res.id}/episodes`}
+                    style={{ textDecoration: "none" }}
+                  >
+                    <Button size="small" color="primary">
+                      Episodes
+                    </Button>
                   </Link>
                 </CardActions>
               </Card>
             </Grid>
           ))}
         </Grid>
-      <Footer/>
+        <Footer />
       </Container>
     </div>
   ) : (

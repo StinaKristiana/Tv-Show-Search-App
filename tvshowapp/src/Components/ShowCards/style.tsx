@@ -1,17 +1,16 @@
 import { makeStyles } from "@material-ui/core";
 
 export const useStyles = makeStyles((theme) => ({
-    root: {
+  root: {
     width: 500,
   },
   cardsroot: {
-
-        display: 'flex',
-        '& > * + *': {
-          marginLeft: theme.spacing(2),
-        },
+    display: "flex",
+    "& > * + *": {
+      marginLeft: theme.spacing(2),
+    },
   },
-icon: {
+  icon: {
     marginRight: theme.spacing(2),
   },
   heroContent: {
@@ -26,12 +25,12 @@ icon: {
     paddingBottom: theme.spacing(8),
   },
   card: {
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
   },
   cardMedia: {
-    paddingTop: '56.25%', // 16:9
+    paddingTop: "56.25%", // 16:9
   },
   cardContent: {
     flexGrow: 1,

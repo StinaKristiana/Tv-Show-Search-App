@@ -1,27 +1,33 @@
-import { makeStyles, Theme, createStyles } from "@material-ui/core";
-import { red } from "@material-ui/core/colors";
+import { makeStyles } from "@material-ui/core";
 
-export const useStyles = makeStyles((theme: Theme) =>
-createStyles({
+export const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345,
+    height: "90.3vh",
   },
-  media: {
-    height: 0,
-    paddingTop: '56.25%', // 16:9
+  image: {
+    backgroundRepeat: "no-repeat",
+    backgroundColor:
+      theme.palette.type === "light"
+        ? theme.palette.grey[50]
+        : theme.palette.grey[900],
+    backgroundSize: "cover",
+    backgroundPosition: "center",
   },
-  expand: {
-    transform: 'rotate(0deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.shortest,
-    }),
-  },
-  expandOpen: {
-    transform: 'rotate(180deg)',
+  paper: {
+    margin: theme.spacing(8, 4),
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
   },
   avatar: {
-    backgroundColor: red[500],
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main,
   },
-}),
-);
+  form: {
+    width: "100%",
+    marginTop: theme.spacing(1),
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+  },
+}));
