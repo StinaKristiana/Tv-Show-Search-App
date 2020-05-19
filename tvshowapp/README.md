@@ -15,7 +15,7 @@ In project directory run following commands:
 ```
 After what project should automatically open on : http://localhost:3000/
 
-## Designe
+## Design
 ![Image of Design](./assets/img/intro.png)
 ![Image of Design](./assets/img/episodes.png)
 ![Image of Design](./assets/img/about.png)
