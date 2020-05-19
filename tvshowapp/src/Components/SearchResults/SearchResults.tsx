@@ -15,7 +15,7 @@ import {
 import { useStyles } from "../ShowCards/style";
 import _ from "lodash";
 import Footer from "../ShowCards/Footer/Footer";
-
+import notfound from '../../assets/img/notfound.png'
 interface Props {
   search: boolean;
   searchingFor: string;
@@ -53,7 +53,7 @@ export default function SearchResults(): ReactElement {
                   image={
                     res.image !== null
                       ? res.image.original
-                      : "https://bitsofco.de/content/images/2018/12/Screenshot-2018-12-16-at-21.06.29.png"
+                      : notfound
                   }
                   title="Image title"
                 />
