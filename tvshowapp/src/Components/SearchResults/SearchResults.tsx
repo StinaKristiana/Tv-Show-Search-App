@@ -1,5 +1,5 @@
 import React, { ReactElement, useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { Show } from "../component";
 import {
   CircularProgress,
@@ -33,7 +33,7 @@ export default function SearchResults(): ReactElement {
         setShows(data.map((res: { score: number; show: Show }) => res.show))
       )
       .catch((err) => console.log(err));
-  },);
+  },[]);
   console.log(shows);
   
   return shows !== undefined ? (
@@ -58,12 +58,16 @@ export default function SearchResults(): ReactElement {
                   </Typography>
                 </CardContent>
                 <CardActions>
+                <Link to={`/show/${res.id}`} style={{textDecoration: 'none'}} >
                   <Button size="small" color="primary">
                     Read More
                   </Button>
+                  </Link>
+                  <Link to={`/show/${res.id}/episodes`} style={{textDecoration: 'none'}} >
                   <Button size="small" color="primary">
                     Episodes
                   </Button>
+                  </Link>
                 </CardActions>
               </Card>
             </Grid>
