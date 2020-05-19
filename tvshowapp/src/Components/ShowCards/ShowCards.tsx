@@ -14,7 +14,7 @@ import {
 import { useStyles } from "./style";
 import Hero from "./Hero/Hero";
 import Footer from "./Footer/Footer";
-import { Show } from "../component";
+import { Show } from "../ShowInterface";
 import { Link } from "react-router-dom";
 
 export default function ShowCards(): ReactElement {

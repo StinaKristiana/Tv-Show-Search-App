@@ -2,7 +2,7 @@ import React, { ReactElement, useState, useEffect } from "react";
 import Typography from "@material-ui/core/Typography";
 import { useParams, Link } from "react-router-dom";
 import { useStyles } from "./style";
-import { Show } from "../component";
+import { Show } from "../ShowInterface";
 import {
   CircularProgress,
   Tooltip,

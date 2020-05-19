@@ -1,6 +1,6 @@
 import React, { ReactElement, useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { Show } from "../component";
+import { Show } from "../ShowInterface";
 import {
   CircularProgress,
   Container,
@@ -14,7 +14,6 @@ import {
 } from "@material-ui/core";
 import { useStyles } from "../ShowCards/style";
 import _ from "lodash";
-import Footer from "../ShowCards/Footer/Footer";
 import notfound from '../../assets/img/notfound.png'
 interface Props {
   search: boolean;

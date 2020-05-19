@@ -1,5 +1,5 @@
 import React, { ReactElement, useState, useEffect } from "react";
-import { Episode } from "../component";
+import { Episode } from "../ShowInterface";
 import TreeView from "@material-ui/lab/TreeView";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
