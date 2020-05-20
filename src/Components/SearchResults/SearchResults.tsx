@@ -14,7 +14,7 @@ import {
 } from "@material-ui/core";
 import { useStyles } from "../ShowCards/style";
 import _ from "lodash";
-import notfound from '../../assets/img/notfound.png'
+import notfound from "../../assets/img/notfound.png";
 interface Props {
   search: boolean;
   searchingFor: string;
@@ -49,11 +49,7 @@ export default function SearchResults(): ReactElement {
               <Card className={classes.card}>
                 <CardMedia
                   className={classes.cardMedia}
-                  image={
-                    res.image !== null
-                      ? res.image.original
-                      : notfound
-                  }
+                  image={res.image !== null ? res.image.original : notfound}
                   title="Image title"
                 />
                 <CardContent className={classes.cardContent}>
