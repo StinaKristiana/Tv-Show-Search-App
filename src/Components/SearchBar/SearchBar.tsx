@@ -6,7 +6,6 @@ import InputBase from "@material-ui/core/InputBase";
 import SearchIcon from "@material-ui/icons/Search";
 import { useStyles } from "./style";
 import { Link } from "react-router-dom";
-import { Paper } from "@material-ui/core";
 
 interface Props {
   onChange: (value: string) => void;
