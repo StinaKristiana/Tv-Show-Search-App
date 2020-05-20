@@ -1,14 +1,10 @@
 import React, { ReactElement, useState, useEffect } from "react";
 import { Episode } from "../ShowInterface";
-import TreeView from "@material-ui/lab/TreeView";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import TreeItem from "@material-ui/lab/TreeItem";
 import { useStyles } from "./style";
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import _ from "lodash";
-import notfound from '../../assets/img/notfound.png'
+import notfound from "../../assets/img/notfound.png";
 import {
   Card,
   CardActionArea,
@@ -47,17 +43,11 @@ export default function Episodes(): ReactElement {
   };
 
   return (
-    <TreeView
-      className={classes.root}
-      defaultCollapseIcon={<ExpandMoreIcon />}
-      defaultExpandIcon={<ChevronRightIcon />}
-    >
+    <Grid>
       {getSeasons().map((res: any, index: number) => (
-        <TreeItem
-          nodeId={`${index}`}
-          label={`Season: ${index + 1}`}
-          key={_.uniqueId("id_")}
-        >
+        <div key={`${index}`}>
+          <h2>Season: {index + 1}</h2>
+
           <Card className={classes.broot}>
             <Grid container spacing={4}>
               {res.map((it: Episode) => (
@@ -65,11 +55,7 @@ export default function Episodes(): ReactElement {
                   <CardActionArea>
                     <CardMedia
                       className={classes.media}
-                      image={
-                        it.image
-                          ? it.image.original
-                          : notfound
-                      }
+                      image={it.image ? it.image.original : notfound}
                       title="Contemplative Reptile"
                     />
                     <CardContent>
@@ -90,8 +76,8 @@ export default function Episodes(): ReactElement {
               ))}
             </Grid>
           </Card>
-        </TreeItem>
+        </div>
       ))}
-    </TreeView>
+    </Grid>
   );
 }

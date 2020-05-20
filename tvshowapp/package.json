@@ -17,6 +17,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-markdown": "^4.3.1",
+    "react-material-ui-carousel": "^1.4.5",
     "react-scripts": "3.4.1",
     "typescript": "^3.7.5"
   },
