@@ -16,9 +16,7 @@ In project directory run following commands:
 After what project should automatically open on : http://localhost:3000/
 
 ## Design
-![Image of Design](./src/assets/img/intro.png)
-![Image of Design](./src/assets/img/episodes.png)
-![Image of Design](./src/assets/img/about.png)
+![Gif of Design](./src/assets/img/Friendsprev.gif)
 
 # Technical Notes
 - Responsive design using Material UI Guidelines 🎨
