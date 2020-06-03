@@ -10,8 +10,7 @@ In project directory run following commands:
 
 ```
 1. npm install
-2. npm run modules
-3. npm run start
+2. npm run start
 ```
 
 After what project should automatically open on : http://localhost:3000/
