@@ -1,6 +1,5 @@
 import React, { ReactElement, useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { Show } from "../ShowInterface";
 import {
   CircularProgress,
   Container,
@@ -15,6 +14,7 @@ import {
 import { useStyles } from "../ShowCards/style";
 import _ from "lodash";
 import notfound from "../../assets/img/notfound.png";
+import { Show } from "../../types/Show";
 interface Props {
   search: boolean;
   searchingFor: string;

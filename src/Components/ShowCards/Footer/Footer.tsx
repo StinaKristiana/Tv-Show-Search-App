@@ -22,7 +22,7 @@ export default function Footer(): ReactElement {
         <Grid container spacing={2} justify="center">
           <BottomNavigation
             value={value}
-            onChange={(event, newValue) => {
+            onChange={(e, newValue) => {
               setValue(newValue);
             }}
             showLabels

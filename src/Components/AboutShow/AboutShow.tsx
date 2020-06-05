@@ -2,7 +2,6 @@ import React, { ReactElement, useState, useEffect } from "react";
 import Typography from "@material-ui/core/Typography";
 import { useParams, Link } from "react-router-dom";
 import { useStyles } from "./style";
-import { Show } from "../ShowInterface";
 import {
   CircularProgress,
   Tooltip,
@@ -12,6 +11,7 @@ import {
 } from "@material-ui/core";
 import ReactMarkdown from "react-markdown";
 import Rating from "@material-ui/lab/Rating";
+import { Show } from "../../types/Show";
 
 export default function AboutShow(): ReactElement {
   const classes = useStyles();

@@ -14,8 +14,8 @@ import {
 import { useStyles } from "./style";
 import Hero from "./Hero/Hero";
 import Footer from "./Footer/Footer";
-import { Show } from "../ShowInterface";
 import { Link } from "react-router-dom";
+import { Show } from "../../types/Show";
 
 export default function ShowCards(): ReactElement {
   const classes = useStyles();

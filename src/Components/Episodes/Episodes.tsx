@@ -1,5 +1,4 @@
 import React, { ReactElement, useState, useEffect } from "react";
-import { Episode } from "../ShowInterface";
 import { useStyles } from "./style";
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
@@ -13,6 +12,7 @@ import {
   Typography,
   Grid,
 } from "@material-ui/core";
+import { Episode } from "../../types/Episode";
 
 export default function Episodes(): ReactElement {
   const classes = useStyles();
